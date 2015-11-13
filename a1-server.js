@@ -16,12 +16,12 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 // Set up some program variables (global) for our maths problem
 var augend = 6;
 var addend = 3;
-var sum;
+var sum = augend + addend;
 
 // We will use a remote console logging service for debug messages
 // Define the service variable and connnect
 // You must edit <<<change_to_your_repo_name>>> to be your repository name
-var consolere = require('console-remote-client').connect('console.re','80','<<<change_to_your_repo_name>>>');
+var consolere = require('console-remote-client').connect('console.re','80','<<<A00221835_Assignment_One>>>');
 
 // Function to handle web browser requests and server responses
 function handleRequest(request, response){
@@ -30,10 +30,10 @@ function handleRequest(request, response){
     // Send user the server response 
     response.end('Assignment One. Expected Sum of 6 + 3 is 9, Actual Sum returned by program is : ' + sum);
     
-    // ASSIGNMENT
-    // 1. Add a debug message which ouputs the sum of the simple equation above. Values are available in the augend, addend 
-    // and sum (global) variables
-    // 2. Add a debug message which ouputs the current values of the augend addend and sum variables
+    debugger;
+    console.log(sum)
+    debugger;
+    console.log(augend, addend, sum)
 }
 
 // Create an instance of a http server
